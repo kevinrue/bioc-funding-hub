@@ -1,0 +1,37 @@
+name: Validate content
+
+on:
+  pull_request:
+    paths:
+      - "funding-records/**"
+      - "funding-opportunities/**"
+      - "schemas/**"
+      - "scripts/validate_frontmatter.py"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Determine changed content files
+        id: diff
+        run: |
+          git fetch origin ${{ github.base_ref }} --depth=1
+          FILES=$(git diff --name-only origin/${{ github.base_ref }} -- 'funding-records/**/*.md' 'funding-opportunities/**/*.md')
+          echo "files<<EOF" >> "$GITHUB_OUTPUT"
+          echo "$FILES" >> "$GITHUB_OUTPUT"
+          echo "EOF" >> "$GITHUB_OUTPUT"
+
+      - name: Validate frontmatter
+        if: steps.diff.outputs.files != ''
+        run: python scripts/validate_frontmatter.py ${{ steps.diff.outputs.files }}

@@ -1,0 +1,22 @@
+---
+title: "Open Funding Opportunities"
+listing:
+  id: funding-opportunities-listing
+  contents:
+    - "*.md"
+    - "*/*.md"
+  type: table
+  sort: "deadline asc"
+  sort-ui: [deadline, funder, amount_max]
+  filter-ui: [funder, status, categories]
+  categories: true
+  fields: [title, funder, deadline, amount_min, amount_max, status, categories]
+  field-display-names:
+    deadline: "Deadline"
+    amount_min: "Min"
+    amount_max: "Max"
+  page-size: 25
+---
+
+Open and upcoming funding calls relevant to Bioconductor. Contribute a new one by copying
+[`_templates/funding-opportunity-template.md`](https://github.com/Bioconductor/funding-hub/blob/main/_templates/funding-opportunity-template.md).

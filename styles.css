@@ -1,0 +1,9 @@
+/* Bioconductor Funding Hub theme tweaks */
+
+.quarto-listing-table th {
+  white-space: nowrap;
+}
+
+.callout-note {
+  border-left-color: #35424a;
+}

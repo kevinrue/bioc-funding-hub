@@ -1,0 +1,28 @@
+---
+title: "Bioconductor Funding Hub"
+---
+
+A community-maintained record of funding relevant to the Bioconductor project — both **past
+funding** that community members can learn from, and **open opportunities** worth applying to
+together.
+
+::: {.callout-note appearance="simple"}
+**Browse:** [Past funding](funding-records/funding-records.qmd) · [Open opportunities](funding-opportunities/funding-opportunities.qmd)
+:::
+
+## Why this exists
+
+Knowledge about what funding worked, who led it, and what's coming up currently lives scattered
+across individuals' heads and inboxes. This hub collects it in one browsable, searchable place so
+that:
+
+- Future applicants can learn from successful past applications (scope, budget, team structure).
+- Community members can discover open calls and find collaborators before a deadline.
+- The history of how Bioconductor-related work has been funded is preserved.
+
+## How to contribute
+
+Entries are added via GitHub pull request by copying a template, filling in a few fields, and
+opening a PR — automated checks catch missing/malformed fields before a maintainer even looks. See
+[CONTRIBUTING.md](https://github.com/Bioconductor/funding-hub/blob/main/CONTRIBUTING.md) for the
+full guide, or [About](about.qmd) for more on how the project is run.

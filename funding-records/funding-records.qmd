@@ -1,0 +1,24 @@
+---
+title: "Past Funding"
+listing:
+  id: funding-records-listing
+  contents:
+    - "*.md"
+    - "*/*.md"
+  type: table
+  sort: "start_date desc"
+  sort-ui: [start_date, funder, amount]
+  filter-ui: [funder, status, categories]
+  categories: true
+  fields: [title, lead_display, funder, start_date, end_date, amount, status, categories]
+  field-display-names:
+    lead_display: "Lead(s)"
+    start_date: "Start"
+    end_date: "End"
+    amount: "Amount"
+  page-size: 25
+---
+
+This page lists completed and ongoing funding for Bioconductor-related work. Contribute a new
+entry by copying [`_templates/funding-record-template.md`](https://github.com/Bioconductor/funding-hub/blob/main/_templates/funding-record-template.md).
+See [funding opportunities](../funding-opportunities/funding-opportunities.qmd) for open calls.

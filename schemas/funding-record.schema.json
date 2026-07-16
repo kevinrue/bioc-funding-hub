@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Funding Record",
+  "type": "object",
+  "required": [
+    "title", "slug", "status", "project_lead", "lead_display", "funder",
+    "start_date", "end_date", "amount", "currency",
+    "categories", "consent_confirmed"
+  ],
+  "properties": {
+    "title": { "type": "string", "minLength": 1 },
+    "slug": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "status": { "type": "string", "enum": ["ongoing", "completed"] },
+    "project_lead": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/person" }
+    },
+    "lead_display": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Comma-separated names matching project_lead (+ co_leads if relevant). Used for listing-table display since Quarto listings render object-list frontmatter fields poorly."
+    },
+    "co_leads": { "type": "array", "items": { "$ref": "#/$defs/person" }, "default": [] },
+    "team_members": { "type": "array", "items": { "$ref": "#/$defs/person" }, "default": [] },
+    "funder": { "type": "string", "minLength": 1 },
+    "funder_program": { "type": "string" },
+    "grant_id": { "type": "string" },
+    "start_date": { "type": "string", "format": "date" },
+    "end_date": { "type": "string", "format": "date" },
+    "amount": { "type": "number", "minimum": 0 },
+    "currency": { "type": "string", "pattern": "^[A-Z]{3}$" },
+    "amount_note": { "type": "string" },
+    "related_opportunity": { "type": ["string", "null"] },
+    "related_packages": { "type": "array", "items": { "type": "string" } },
+    "categories": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "consent_confirmed": { "type": "boolean", "const": true }
+  },
+  "$defs": {
+    "person": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "github": { "type": ["string", "null"] },
+        "orcid": {
+          "type": ["string", "null"],
+          "pattern": "^\\d{4}-\\d{4}-\\d{4}-\\d{3}[0-9X]$"
+        },
+        "role": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,38 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - "*.qmd"
+    - "funding-records/*.qmd"
+    - "funding-records/**/*.md"
+    - "funding-opportunities/*.qmd"
+    - "funding-opportunities/**/*.md"
+
+website:
+  title: "Bioconductor Funding Hub"
+  description: "Past funding and upcoming funding opportunities for Bioconductor-related projects"
+  site-url: "https://bioconductor.github.io/funding-hub/"
+  repo-url: "https://github.com/Bioconductor/funding-hub"
+  repo-actions: [edit, issue]
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: funding-records/funding-records.qmd
+        text: Past Funding
+      - href: funding-opportunities/funding-opportunities.qmd
+        text: Open Opportunities
+      - href: about.qmd
+        text: About / Contribute
+    right:
+      - icon: github
+        href: https://github.com/Bioconductor/funding-hub
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: false
+
+execute:
+  freeze: auto
