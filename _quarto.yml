@@ -19,7 +19,7 @@ website:
       - href: index.qmd
         text: Home
       - href: funding-records/funding-records.qmd
-        text: Past Funding
+        text: Current & Past Funding
       - href: funding-opportunities/funding-opportunities.qmd
         text: Open Opportunities
       - href: about.qmd

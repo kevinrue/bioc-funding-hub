@@ -1,25 +1,25 @@
 ---
-title: "EXAMPLE: Scaling a single-cell analysis package"
-slug: 2023-example-foundation-researcher-scaling
-status: completed
+title: "Connecting Bioconductor, Galaxy, and nf-core: FAIR, AI-ready workflows and training for single-cell analysis"
+slug: 2026-biofair-rue-albrecht-bioconductor-galaxy-nf-core
+status: ongoing
 project_lead:
-  - name: "Jane Researcher (fictional example)"
-    github: example-user
-lead_display: "Jane Researcher"
-funder: "Example Foundation"
-funder_program: "Essential Open Source Software for Science (illustrative)"
-start_date: 2023-09-01
-end_date: 2024-08-31
-amount: 250000
-currency: USD
-amount_note: "This is a fictional placeholder entry, not a real award -- replace with a verified, real record"
+  - name: "Kevin Rue-Albrecht"
+    github: kevinrue
+lead_display: "Kevin Rue-Albrecht"
+funder: "BioFAIR"
+funder_program: "Pathfinder"
+start_date: 2026-04-01
+end_date: 2027-03-31
+amount: 57,798
+currency: GBP
+amount_note: "Not sure what this field does."
 related_opportunity: null
 related_packages:
-  - examplePkg
+  - almahmoud/BiocJobs
 categories:
   - single-cell
-  - example
-  - completed
+  - fair
+  - ongoing
 consent_confirmed: true
 ---
 

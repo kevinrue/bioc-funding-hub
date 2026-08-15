@@ -3,3 +3,5 @@
 .Rproj.user/
 .python-version
 __pycache__/
+
+**/*.quarto_ipynb
